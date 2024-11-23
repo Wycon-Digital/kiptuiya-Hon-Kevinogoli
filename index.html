@@ -1,0 +1,528 @@
+<html><head><base href="https://websim.dev/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hon. Kevin Ogoli - Kiptuiya Ward</title>
+<style>
+:root {
+  --primary-green: #2E7D32;
+  --light-green: #4CAF50;
+  --gold: #FFC107;
+  --white: #FFFFFF;
+  --gray: #F5F5F5;
+  --dark: #212121;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.navbar {
+  background: var(--white);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-green);
+}
+
+.hero {
+  background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)),
+              url('https://source.unsplash.com/random/1920x1080/?kenya,nature') center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding: 2rem;
+  margin-top: 60px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-green);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--gray);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.progress-section {
+  background: var(--gray);
+  padding: 3rem 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+.progress-fill {
+  background: var(--primary-green);
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.about-section {
+  background: var(--white);
+  padding: 5rem 2rem;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-content {
+  padding: 2rem;
+}
+
+.about-content h2 {
+  color: var(--primary-green);
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.credentials {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--gray);
+  border-radius: 10px;
+}
+
+.credentials h3 {
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.credentials ul {
+  list-style: none;
+}
+
+.credentials li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.credentials li:before {
+  content: "•";
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image {
+    height: 300px;
+  }
+}
+
+.join-us-section {
+  padding: 5rem 2rem;
+  background: var(--gray);
+}
+
+.join-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.join-us-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  background: var(--primary-green);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
+  height: 400px;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-content">
+    <div class="logo">Hon. Kevin Ogoli</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#assessment">Assessment</a>
+      <a href="#join-us">Join Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>A Brighter Future for Kiptuiya Starts with You</h1>
+    <p>Join Hon. Kevin Ogoli in identifying and solving our community's challenges together.</p>
+    <a href="#assessment" class="cta-button">Participate in Community Assessment</a>
+  </div>
+</section>
+
+<img src="/47b49f70-6ac7-4be7-bc7d-00955f6f1326.jpeg" 
+     alt="A well-dressed African man in a blue suit stands professionally in a modern office setting" 
+     class="intro-image">
+
+<section class="about-section" id="about">
+  <div class="about-container">
+    <img src="/bc0af01e-8fca-4ab8-b281-4f3415fb27d3.jpeg" 
+         alt="Hon. Kevin Ogoli, a medical professional in teal scrubs and surgical cap, sitting in a medical facility"
+         class="about-image">
+    <div class="about-content">
+      <h2>About Hon. Kevin Ogoli</h2>
+      <p>Hon. Kevin Ogoli is a dedicated medical practitioner and aspiring political leader who has committed his life to serving the community of Kiptuiya Ward. With a strong background in healthcare and a deep understanding of community needs, he is preparing to vie for the position of Member of County Assembly in 2027.</p>
+      
+      <p>Currently serving as a medical practitioner at both Kapsabet District Hospital and Eldoret Referral Hospital, Hon. Ogoli brings a wealth of experience in public health and community service to his leadership role.</p>
+      
+      <div class="credentials">
+        <h3>Professional Background</h3>
+        <ul>
+          <li>Medical Practitioner at Kapsabet District Hospital</li>
+          <li>Specialist at Eldoret Referral Hospital</li>
+          <li>Community Health Advocate</li>
+          <li>Aspiring MCA Candidate 2027</li>
+        </ul>
+      </div>
+      
+      <p>His unique combination of medical expertise and community leadership makes him well-positioned to understand and address the healthcare and development needs of Kiptuiya Ward. Hon. Ogoli believes in a holistic approach to community development, where health, education, and infrastructure work together to create sustainable progress.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our Vision for Kiptuiya</h2>
+  <div class="features">
+    <div class="feature-card">
+      <i class="fas fa-handshake feature-icon"></i>
+      <h3>Community First</h3>
+      <p>Prioritizing the needs and aspirations of every Kiptuiya resident</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-chart-line feature-icon"></i>
+      <h3>Sustainable Growth</h3>
+      <p>Developing infrastructure and programs that benefit generations to come</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-users feature-icon"></i>
+      <h3>Inclusive Leadership</h3>
+      <p>Ensuring every voice is heard in the development process</p>
+    </div>
+  </div>
+</section>
+
+<section class="progress-section" id="projects">
+  <div class="section">
+    <h2 class="section-title">Current Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/random/400x300/?construction" alt="Road construction project in progress" class="project-image">
+        <div class="project-content">
+          <h3>Road Infrastructure</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 75%"></div>
+          </div>
+          <p>75% Complete</p>
+          <p>Improving accessibility across Kiptuiya Ward</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/random/400x300/?school" alt="School development project" class="project-image">
+        <div class="project-content">
+          <h3>Education Development</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 45%"></div>
+          </div>
+          <p>45% Complete</p>
+          <p>Enhancing learning facilities for our children</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/random/400x300/?agriculture" alt="Agricultural development project" class="project-image">
+        <div class="project-content">
+          <h3>Agricultural Programs</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%"></div>
+          </div>
+          <p>60% Complete</p>
+          <p>Supporting local farmers and food security</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join-us-section" id="join-us">
+  <div class="join-us-container">
+    <h2 class="section-title">Join Our Movement</h2>
+    <p>Be part of the transformation in Kiptuiya Ward. Together, we can build a better future for our community.</p>
+    
+    <form class="join-us-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="area">Area of Residence in Kiptuiya</label>
+        <input type="text" id="area" name="area" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">How would you like to contribute?</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      
+      <button type="submit" class="submit-button">Join the Movement</button>
+    </form>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = '#FFFFFF';
+            navbar.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.background = '#FFFFFF';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+});
+</script>
+
+</body></html>
